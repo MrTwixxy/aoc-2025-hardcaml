@@ -1,0 +1,6 @@
+(library
+ (name Day1)
+ (public_name hardcaml_day1)
+ (libraries hardcaml)
+ (preprocess
+  (pps ppx_deriving_hardcaml)))

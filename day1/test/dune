@@ -1,0 +1,9 @@
+(library
+ (name test)
+ (inline_tests
+  (flags (-verbose)))
+ (libraries hardcaml hardcaml_waveterm hardcaml_day1)
+ (preprocess
+  (pps ppx_jane ppx_expect)))
+
+(include_subdirs unqualified)

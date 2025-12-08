@@ -1,0 +1,15 @@
+(lang dune 2.8)
+
+(cram enable)
+
+(package
+ (name hardcaml_day1))
+
+(version 0.1.2)
+
+(generate_opam_files true)
+
+(source
+ (github MrTwixxy/aoc-2025-hardcaml))
+
+(authors "MrTwixxy")
