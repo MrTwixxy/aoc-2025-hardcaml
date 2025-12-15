@@ -35,7 +35,7 @@ then run
 dune test
 ```
 
-Test inputs are imported and parsed and in `test/test.ml`, while the actual input files are located in the `tests` directory
+Test inputs are imported and parsed in `test/test.ml`, while the actual input files are located in the `tests` directory
 
 ### Generating Verilog
 
@@ -54,7 +54,8 @@ dune exec ./verilog.ml
 ## Logic
 
 The main circuit logic is located in `lib/datapath.ml`
-A C++ script simular logic is located in `logic.cpp`
+
+A C++ script with simular logic is located in `logic.cpp`
 
 The circuit essentially copies the C++ script, but has a few modifications to be suitable for hardware. Most significant are the division and modulo operations in the C++ script. Because division is tricky in hardware and we always divide by the same amount, we can use division by constants. For example, multiplying something by `0.01` is the same as dividing by `100`.
 
@@ -64,4 +65,4 @@ The circuit currently uses 16 bit integers for the main logic, of which the most
 
 Each clock cycle, 2 main signals are inputted into the circuit, `positive` and `value`. Positive is 1 when the rotation direction is right and 0 otherwise. Value is the amount of steps to actually go into that direction. Based on the input signal `part` the result is updated every clock cycle. When `part` is `0`, it returns the result for part 1 of the task and when `part` is `1`, it returns the result for part 2 of the task.
 
-Since the result is updated every clock cycle, it is easy to observe or log the intermediate values.
+Since the result is updated every clock cycle, it is very fast and easy to observe or log the intermediate values.
